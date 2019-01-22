@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    consul:
+      host: 129.204.69.80
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        instanceId: ${spring.application.name}:${server.port}:${random.value}
+        prefer-ip-address: true
+        ip-address: 129.204.69.80
+        health-check-path: /health
+      config:
+        format: YAML
+  application:
+    name: scau-bbs-chat
+server:
+  host: localhost
+  port: 8084
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul-agent-1
+      port: 8500
+      discovery:
+        health-check-interval: 15s
+        instanceId: ${spring.application.name}:${server.port}:${random.value}
+        prefer-ip-address: false
+        hostname: chat
+        health-check-path: /health
+      config:
+        format: YAML
+  application:
+    name: scau-bbs-chat

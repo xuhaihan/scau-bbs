@@ -1,0 +1,25 @@
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  redis:
+    host: localhost
+    password:
+    port: 6379
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+    timeout: 0
+server:
+  port: 8080
+logging:
+  file: log.log
+  level:
+    org:
+      springframework:
+        web: DEBUG

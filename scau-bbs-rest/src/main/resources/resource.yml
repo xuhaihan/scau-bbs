@@ -1,0 +1,7 @@
+REDIS_USER_KEY: quark:user:
+REDIS_USERID_KEY: quark:uid
+STATIC_URL: http://127.0.0.1/images/upload/
+REDIS_RANK_USERS: quark:rank:users
+REDIS_RANK_POSTS: quark:rank:posts
+UPLOAD_PATH: D:\\home\\images\\upload\\
+REDIS_USER_TIME: 24

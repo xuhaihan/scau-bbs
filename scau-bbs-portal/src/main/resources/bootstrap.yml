@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        instanceId: ${spring.application.name}:${server.port}:${random.value}
+        prefer-ip-address: true
+        ip-address: 127.0.0.1
+        health-check-path: /health
+      config:
+        format: YAML
+  application:
+    name: scau-bbs-portal
+server:
+  port: 8082
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: consul-agent-1
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        instanceId: ${spring.application.name}:${server.port}:${random.value}
+        prefer-ip-address: false
+        hostname: portal
+        health-check-path: /actuator/health
+      config:
+        format: YAML
+  application:
+    name: scau-bbs-portal

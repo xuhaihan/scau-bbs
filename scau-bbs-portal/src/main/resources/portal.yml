@@ -1,0 +1,20 @@
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  mvc:
+    favicon:
+      enabled: false
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+server:
+  tomcat:
+    uri-encoding: UTF-8
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG

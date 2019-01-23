@@ -31,7 +31,7 @@
         <nekohtml.version>1.9.22</nekohtml.version>
         <fasterxml.version>2.8.0</fasterxml.version>
         <springfox.version>2.2.2</springfox.version>
-        <docker.repository>xhhscau/scau-bbs</docker.repository>
+        <docker.repository>cloud.docker.com/repository/docker/xhhscau/scau-bbs</docker.repository>
     </properties>
 
     <dependencyManagement>

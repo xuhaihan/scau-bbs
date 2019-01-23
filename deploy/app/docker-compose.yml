@@ -6,7 +6,7 @@ networks:
 services:
   admin:
 
-    image: scau-bbs-admin.1.0-SNAPSHOT
+    image: scau-bbs-admin.1.0-snapshot
     networks:
       - default
       - consul
@@ -20,7 +20,7 @@ services:
         max-file: "10"
 
   chat:
-    image: scau-bbs-chat.1.0-SNAPSHOT
+    image: scau-bbs-chat.1.0-snapshot
     networks:
       - default
       - consul
@@ -35,7 +35,7 @@ services:
         max-file: "10"
 
   portal:
-    image: scau-bbs-portal.1.0-SNAPSHOT
+    image: scau-bbs-portal.1.0-snapshot
     networks:
       - default
       - consul
@@ -49,7 +49,7 @@ services:
           max-file: "10"
 
   rest:
-    image: scau-bbs-rest.1.0-SNAPSHOT
+    image: scau-bbs-rest.1.0-snapshot
     networks:
       - default
       - consul

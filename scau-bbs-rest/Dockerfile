@@ -1,5 +1,5 @@
 FROM openjdk:8-jre
-MAINTAINER zhsyourai <mysoftzhs@gmail.com>
+MAINTAINER xhhscau <xhhscau2015@163.com>
 VOLUME /tmp
 ENV JAVA_OPTS=""
 ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar --spring.profiles.active=docker

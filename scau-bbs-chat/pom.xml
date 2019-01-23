@@ -74,6 +74,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <mainClass>com.scau.bbs.chat.ChatApplication</mainClass>
                     <fork>true</fork>
                 </configuration>
             </plugin>

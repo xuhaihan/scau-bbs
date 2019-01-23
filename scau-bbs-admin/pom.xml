@@ -86,6 +86,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <mainClass>com.scau.bbs.admin.AdminApplication</mainClass>
                     <fork>true</fork>
                 </configuration>
             </plugin>

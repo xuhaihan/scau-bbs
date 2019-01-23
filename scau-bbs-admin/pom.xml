@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.scau</groupId>
     <artifactId>scau-bbs-admin</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

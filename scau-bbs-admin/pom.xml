@@ -11,7 +11,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.scau</groupId>
     <artifactId>scau-bbs-admin</artifactId>
-    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -101,8 +100,8 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <configuration>
-                    <repository>${docker.repository}/${project.artifactId}</repository>
-                    <tag>${project.version}</tag>
+                    <repository>${docker.repository}</repository>
+                    <tag>${project.artifactId}:${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>

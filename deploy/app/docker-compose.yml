@@ -5,7 +5,7 @@ networks:
   default:
 services:
   admin:
-    image: registry.cn-shenzhen.aliyuncs.com/scau-bbs/scau-bbs-admin:0.0.1-SNAPSHOT
+    image: xhhscau/scau-bbs/scau-bbs-admin:0.0.1-SNAPSHOT
     networks:
       - default
       - consul
@@ -19,7 +19,7 @@ services:
         max-file: "10"
 
   chat:
-    image: registry.cn-shenzhen.aliyuncs.com/scau-bbs/scau-bbs-chat:0.0.1-SNAPSHOT
+    image: xhhscau/scau-bbs/scau-bbs-chat:0.0.1-SNAPSHOT
     networks:
       - default
       - consul
@@ -34,7 +34,7 @@ services:
         max-file: "10"
 
   portal:
-    image: registry.cn-shenzhen.aliyuncs.com/scau-bbs/scau-bbs-portal:0.0.1-SNAPSHOT
+    image: xhhscau/scau-bbs/scau-bbs-portal:0.0.1-SNAPSHOT
     networks:
       - default
       - consul
@@ -48,7 +48,7 @@ services:
           max-file: "10"
 
   rest:
-    image: registry.cn-shenzhen.aliyuncs.com/scau-bbs/scau-bbs-rest:0.0.1-SNAPSHOT
+    image: scauxhh/scau-bbs/scau-bbs-rest:0.0.1-SNAPSHOT
     networks:
       - default
       - consul

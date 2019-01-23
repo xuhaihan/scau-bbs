@@ -136,13 +136,13 @@
         </pluginManagement>
     </build>
     <repositories>
-        <repository>
-            <id>docker-hub</id>
-            <name>xhhscau</name>
-            <url>https://cloud.docker.com/repository/docker</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <repository>
+                <id>spring-milestones</id>
+                <name>Spring Milestones</name>
+                <url>https://repo.spring.io/libs-milestone</url>
+                <snapshots>
+                    <enabled>false</enabled>
+                </snapshots>
         </repository>
     </repositories>
 </project>

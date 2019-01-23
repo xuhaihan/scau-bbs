@@ -139,7 +139,7 @@
         <repository>
             <id>docker-hub</id>
             <name>xhhscau</name>
-            <url>https://cloud.docker.com/repository/docker/xhhscau/scau-bbs</url>
+            <url>https://cloud.docker.com/repository/docker</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

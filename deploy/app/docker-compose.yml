@@ -1,10 +1,8 @@
 version: "3.5"
-
         networks:
         consul:
         external: true
         default:
-
         services:
           admin:
             image: registry.cn-shenzhen.aliyuncs.com/scau-bbs/scau-bbs-admin:0.0.1-SNAPSHOT

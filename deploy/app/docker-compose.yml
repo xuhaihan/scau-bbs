@@ -4,16 +4,6 @@ networks:
     external: true
   default:
 services:
-  db:
-      image: 'mysql/mysql-server:5.6'
-      restart: always
-      container_name: mysql
-      volumes:
-        - data:/var/lib/mysql
-        - ./mysql/config/my.cnf:/etc/my.cnf
-        - ./mysql/init:/docker-entrypoint-initdb.d/
-      ports:
-        - '3306:3306'
   admin:
     image: xhhscau/scau-bbs/scau-bbs-admin:1.0-snapshot
     networks:
@@ -22,8 +12,6 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
-    depends_on:
-      - db
     logging:
       driver: "json-file"
       options:
@@ -39,8 +27,6 @@ services:
       - "8084:8084"
       - "8083:8083"
     restart: unless-stopped
-    depends_on:
-      - db
     logging:
       driver: "json-file"
       options:
@@ -55,8 +41,6 @@ services:
     ports:
       - "8082:8082"
     restart: unless-stopped
-    depends_on:
-      - db
     logging:
        driver: "json-file"
        options:
@@ -71,8 +55,6 @@ services:
     ports:
       - "8081:8081"
     restart: unless-stopped
-    depends_on:
-      - db
     logging:
       driver: "json-file"
       options:

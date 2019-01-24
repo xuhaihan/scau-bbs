@@ -6,7 +6,7 @@ spring:
     mode: LEGACYHTML5
     cache: false
   redis:
-    host: localhost
+    host: 47.107.89.95
     password:
     port: 6379
     pool:

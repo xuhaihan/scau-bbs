@@ -28,7 +28,7 @@ spring:
         instanceId: ${spring.application.name}:${server.port}:${random.value}
         prefer-ip-address: false
         hostname: rest
-        health-check-path: /actuator/health
+        health-check-path: /health
       config:
         format: YAML
   application:

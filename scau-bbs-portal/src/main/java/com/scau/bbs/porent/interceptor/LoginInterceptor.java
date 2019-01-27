@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @Author LHR Create By 2017/8/27
+ * @Author xhh Create By 2019/1/14
  *
  * <p>登录拦截
  */
@@ -23,7 +23,7 @@ public class LoginInterceptor implements HandlerInterceptor {
   @Value("${cookie_name}")
   private String CookieName;
 
-  //@Override
+  @Override
   public boolean preHandle(
       HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o)
       throws Exception {
@@ -32,7 +32,6 @@ public class LoginInterceptor implements HandlerInterceptor {
     if (token == null) {
       // 跳转到登录页面
       httpServletResponse.sendRedirect("/user/login");
-      // 返回false
       return false;
     }
     User user = userService.getUserByApi(token);
@@ -47,7 +46,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     return true;
   }
 
-  //@Override
+  @Override
   public void postHandle(
       HttpServletRequest httpServletRequest,
       HttpServletResponse httpServletResponse,
@@ -55,7 +54,7 @@ public class LoginInterceptor implements HandlerInterceptor {
       ModelAndView modelAndView)
       throws Exception {}
 
-  //@Override
+  @Override
   public void afterCompletion(
       HttpServletRequest httpServletRequest,
       HttpServletResponse httpServletResponse,

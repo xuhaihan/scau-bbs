@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/** @Author LHR Create By 2017/8/24 */
+/** @Author xhh Create By 2019/1/15 */
 public class HttpClientUtils {
 
   public static String doGet(String url, Map<String, String> param) {

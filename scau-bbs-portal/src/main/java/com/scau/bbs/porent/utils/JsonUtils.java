@@ -6,7 +6,7 @@ import com.scau.bbs.porent.entity.QuarkResult;
 
 import java.io.IOException;
 
-/** @Author LHR Create By 2017/8/24 */
+/** @Author xhh Create By 2019/1/15 */
 public class JsonUtils {
   // 定义jackson对象
   private static final ObjectMapper MAPPER = new ObjectMapper();

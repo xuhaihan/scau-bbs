@@ -138,9 +138,6 @@ public class PostsController extends BaseController {
             return QuarkResult.ok(page.getContent(), page.getTotalElements(), page.getNumberOfElements());
 
         });
-
         return result;
-
     }
-
 }

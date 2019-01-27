@@ -1,10 +1,11 @@
 package com.scau.bbs.porent.entity;
 
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author LHR Create By 2017/8/18
+ * @Author xhh Create By 2019/1/15
  *
  * <p>用户
  */

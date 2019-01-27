@@ -13,6 +13,9 @@ spring:
         format: YAML
   application:
     name: scau-bbs-rest
+  http:
+      multipart:
+        enabled: true
 server:
   host: localhost
   port: 8081

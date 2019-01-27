@@ -13,6 +13,12 @@ spring:
         format: YAML
   application:
     name: scau-bbs-portal
+  thymeleaf:
+      mode: LEGACYHTML5
+      cache: false
+  http:
+    multipart:
+      enabled: true
 server:
   port: 8082
 ---

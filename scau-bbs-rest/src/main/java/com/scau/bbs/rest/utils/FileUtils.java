@@ -26,7 +26,6 @@ public class FileUtils {
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(Constants.UPLOAD_PATH + userUploadPath + fileName)));
             stream.write(file.getBytes());
             stream.close();
-
             return Constants.STATIC_URL+userUploadPath+fileName;
         }
         return null;

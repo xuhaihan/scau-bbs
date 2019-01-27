@@ -3,8 +3,9 @@ package com.scau.bbs.porent.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/** @Author LHR Create By 2017/8/23 */
+/** @Author xhh Create By 2019/1/15 */
 @Controller
+@RequestMapping("/pages")
 public class PageController {
 
   @RequestMapping("/index")
@@ -13,12 +14,12 @@ public class PageController {
   }
 
   @RequestMapping("/label")
-  public String labelhome() {
+  public String labelHome() {
     return "label/home";
   }
 
   @RequestMapping("/chat")
-  public String chathome() {
+  public String chatHome() {
     return "chat/home";
   }
 }

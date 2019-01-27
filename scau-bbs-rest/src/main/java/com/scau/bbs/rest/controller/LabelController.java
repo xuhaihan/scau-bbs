@@ -13,32 +13,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
-/**
- * @Author LHR
- * Create By 2017/8/27
- */
-@Api(value = "标签接口",description = "获取标签")
+/** @Author xhh Create By 2019/1/16 */
+@Api(value = "标签接口", description = "获取标签")
 @RestController
 @RequestMapping("/label")
-public class LabelController extends BaseController{
+public class LabelController extends BaseController {
 
-    @Autowired
-    private LabelService labelService;
+  @Autowired private LabelService labelService;
 
+  @ApiOperation("获取标签")
+  @GetMapping
+  public QuarkResult getAllLabel() {
 
-    @ApiOperation("获取标签")
-    @GetMapping
-    public QuarkResult getAllLabel(){
+    QuarkResult result =
+        restProcessor(
+            () -> {
+              List<Label> labels = labelService.findAll();
+              return QuarkResult.ok(labels);
+            });
 
-        QuarkResult result = restProcessor(() -> {
-            List<Label> labels = labelService.findAll();
-            return QuarkResult.ok(labels);
-        });
-
-        return result;
-    }
-
-
-
+    return result;
+  }
 }

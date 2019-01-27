@@ -32,6 +32,8 @@
         <fasterxml.version>2.8.0</fasterxml.version>
         <springfox.version>2.2.2</springfox.version>
         <docker.repository>xhhscau/scau-bbs</docker.repository>
+        <grpc.version>1.15.1</grpc.version>
+        <feign.version>1.4.1.RELEASE</feign.version>
     </properties>
 
     <dependencyManagement>
@@ -105,6 +107,11 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>1.4.3.RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

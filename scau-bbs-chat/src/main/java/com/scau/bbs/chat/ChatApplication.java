@@ -19,7 +19,7 @@ import org.springframework.core.io.ClassPathResource;
 public class ChatApplication implements CommandLineRunner {
   @Autowired private QuarkChatServer server;
 
-  /*//注入一个bean，加载自定义属性文件admin.yml
+  //注入一个bean，加载自定义属性文件admin.yml
   @Bean
   public static PropertySourcesPlaceholderConfigurer properties() {
     PropertySourcesPlaceholderConfigurer pspc = new PropertySourcesPlaceholderConfigurer();
@@ -28,7 +28,8 @@ public class ChatApplication implements CommandLineRunner {
     yaml.setResources(new ClassPathResource[] {new ClassPathResource("resource.yml")});
     pspc.setProperties(yaml.getObject());
     return pspc;
-  }*/
+  }
+
   public static void main(String[] args) {
      SpringApplication.run(ChatApplication.class,args);
   }

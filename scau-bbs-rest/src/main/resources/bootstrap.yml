@@ -17,7 +17,6 @@ spring:
       multipart:
         enabled: true
 server:
-  host: localhost
   port: 8081
 ---
 spring:

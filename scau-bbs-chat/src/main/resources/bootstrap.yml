@@ -1,20 +1,19 @@
 spring:
   cloud:
     consul:
-      host: 129.204.69.80
+      host: localhost
       port: 8500
       discovery:
         healthCheckInterval: 15s
         instanceId: ${spring.application.name}:${server.port}:${random.value}
         prefer-ip-address: true
-        ip-address: 129.204.69.80
+        ip-address: 127.0.0.1
         health-check-path: /health
       config:
         format: YAML
   application:
     name: scau-bbs-chat
 server:
-  host: localhost
   port: 8084
 ---
 spring:

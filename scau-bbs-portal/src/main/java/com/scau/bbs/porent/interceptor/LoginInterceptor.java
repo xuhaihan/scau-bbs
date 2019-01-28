@@ -21,14 +21,14 @@ public class LoginInterceptor implements HandlerInterceptor {
   @Autowired private UserService userService;
 
   @Value("${cookie_name}")
-  private String CookieName;
+  private String cookieName;
 
   @Override
   public boolean preHandle(
       HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o)
       throws Exception {
 
-    String token = CookieUtils.getCookieValue(httpServletRequest, "QUARK_TOKEN");
+    String token = CookieUtils.getCookieValue(httpServletRequest, cookieName);
     if (token == null) {
       // 跳转到登录页面
       httpServletResponse.sendRedirect("/user/login");

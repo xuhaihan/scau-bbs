@@ -20,7 +20,13 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     registry
         .addInterceptor(loginInterceptor())
         .addPathPatterns(
-            "/posts/add", "/user/set", "/user/seticon", "/user/setpsw", "/user/message", "/chat");
+            "/pages/index",
+            "/posts/pages/add",
+            "/user/pages/set",
+            "/user/pages/seticon",
+            "/user/pages/setpsw",
+            "/user/pages/message",
+            "/pages/chat");
     super.addInterceptors(registry);
   }
 }

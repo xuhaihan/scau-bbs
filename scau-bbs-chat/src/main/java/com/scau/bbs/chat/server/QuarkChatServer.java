@@ -55,7 +55,7 @@ public class QuarkChatServer implements Server {
   @Autowired private ChannelManager manager;
 
   @PostConstruct
-  // @Override
+  //@Override
   public void init() {
     logger.info("server init");
     int cpus = Runtime.getRuntime().availableProcessors();
@@ -66,7 +66,7 @@ public class QuarkChatServer implements Server {
             new ThreadFactory() {
               private AtomicInteger index = new AtomicInteger(0);
 
-              // @Override
+              @Override
               public Thread newThread(Runnable r) {
                 return new Thread(r, "DEFAULTGROUP" + index.incrementAndGet());
               }
@@ -78,7 +78,7 @@ public class QuarkChatServer implements Server {
             new ThreadFactory() {
               private AtomicInteger index = new AtomicInteger(0);
 
-              // @Override
+              @Override
               public Thread newThread(Runnable r) {
                 return new Thread(r, "BOSSGROUP" + index.incrementAndGet());
               }
@@ -90,7 +90,7 @@ public class QuarkChatServer implements Server {
             new ThreadFactory() {
               private AtomicInteger index = new AtomicInteger(0);
 
-              // @Override
+              @Override
               public Thread newThread(Runnable r) {
                 return new Thread(r, "WORKGROUP" + index.incrementAndGet());
               }
@@ -100,7 +100,7 @@ public class QuarkChatServer implements Server {
     executorService = Executors.newScheduledThreadPool(2);
   }
 
-  // @Override
+  @Override
   public void start() {
     logger.info("server start");
     bootstrap
@@ -166,7 +166,7 @@ public class QuarkChatServer implements Server {
   }
 
   @PreDestroy
-  // @Override
+  @Override
   public void shutdown() {
     if (defaultGroup != null) defaultGroup.shutdownGracefully();
     if (executorService != null) executorService.shutdown();

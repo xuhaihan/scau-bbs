@@ -4,5 +4,6 @@ PORT: 8083
 REDIS_RANK_USERS: quark:rank:users
 HOST: 127.0.0.1
 REDIS_RANK_POSTS: quark:rank:posts
-WEBSOCKET_URL: ws://localhost:8083/websocket;
+#WEBSOCKET_URL: ws://localhost:8083/websocket;
+WEBSOCKET_URL: ws://129.204.69.80:8083/websocket;
 REDIS_USER_TIME: 24

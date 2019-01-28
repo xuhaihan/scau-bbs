@@ -1,6 +1,7 @@
 package com.scau.bbs.porent.config;
 
 import com.scau.bbs.porent.interceptor.LoginInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -10,15 +11,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 
-  @Bean
-  LoginInterceptor loginInterceptor() {
-    return new LoginInterceptor();
-  }
-
+  @Autowired
+  private LoginInterceptor loginInterceptor;
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
     registry
-        .addInterceptor(loginInterceptor())
+        .addInterceptor(loginInterceptor)
         .addPathPatterns(
             "/pages/index",
             "/posts/pages/add",

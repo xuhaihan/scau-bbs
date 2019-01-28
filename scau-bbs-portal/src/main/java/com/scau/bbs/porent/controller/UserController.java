@@ -53,7 +53,6 @@ public class UserController {
       @RequestParam("email") String email,
       @RequestParam("username") String username,
       @RequestParam("password") String password) {
-
     return restService.checkUserName(email, username, password);
   }
 

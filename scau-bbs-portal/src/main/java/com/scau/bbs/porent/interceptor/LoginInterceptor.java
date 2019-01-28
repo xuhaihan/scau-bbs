@@ -5,6 +5,7 @@ import com.scau.bbs.porent.service.UserService;
 import com.scau.bbs.porent.utils.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * <p>登录拦截
  */
+@Component
 public class LoginInterceptor implements HandlerInterceptor {
 
   @Autowired private UserService userService;

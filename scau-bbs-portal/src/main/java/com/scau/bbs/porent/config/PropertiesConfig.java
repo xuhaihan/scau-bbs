@@ -7,7 +7,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /** @Author xhh Create By 2019/1/15 */
 @Configuration
-@PropertySource(value={"resource.yml","portal.yml"})
+@PropertySource(value={"classpath:resource.yml","classpath:portal.yml"})
 public class PropertiesConfig {
 
   @Bean

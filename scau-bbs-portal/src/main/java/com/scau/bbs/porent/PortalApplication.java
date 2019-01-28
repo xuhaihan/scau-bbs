@@ -17,7 +17,7 @@ import org.springframework.core.io.ClassPathResource;
 @EnableFeignClients(basePackages={"com.scau.bbs.common"})
 public class PortalApplication {
   //注入一个bean，加载自定义属性文件admin.yml
-  @Bean
+  /*@Bean
   public static PropertySourcesPlaceholderConfigurer properties() {
     PropertySourcesPlaceholderConfigurer pspc = new PropertySourcesPlaceholderConfigurer();
     YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
@@ -25,7 +25,7 @@ public class PortalApplication {
     yaml.setResources(new ClassPathResource[] {new ClassPathResource("resource.yml")});
     pspc.setProperties(yaml.getObject());
     return pspc;
-  }
+  }*/
 
 
 

@@ -7,7 +7,6 @@ import com.scau.bbs.porent.entity.User;
 import com.scau.bbs.porent.service.UserService;
 import com.scau.bbs.porent.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
@@ -20,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public User getUserByApi(String token) {
-    QuarkResult quarkResult=JsonUtils.jsonToQuarkResult(restService.getUserByToken(token), QuarkResult.class);
+    QuarkResult quarkResult=JsonUtils.jsonToQuarkResult(restService.getUserByToken(token), User.class);
     User data = (User) quarkResult.getData();
     return data;
   }

@@ -6,6 +6,8 @@ import com.scau.bbs.porent.utils.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,15 +33,16 @@ public class LoginInterceptor implements HandlerInterceptor {
       throws Exception {
 
     String token = CookieUtils.getCookieValue(httpServletRequest, cookieName);
-    if (token == null) {
+    //System.out.println("拦截token===>"+token);
+    if (StringUtils.isEmpty(token)) {
       // 跳转到登录页面
       httpServletResponse.sendRedirect("/user/login");
       return false;
     }
     User user = userService.getUserByApi(token);
-
+    //System.out.println("拦截user===>"+user.toString());
     // 取不到用户信息
-    if (user == null) {
+    if (ObjectUtils.isEmpty(user)) {
       // 跳转到登录页面
       httpServletResponse.sendRedirect("/user/login");
       // 返回false

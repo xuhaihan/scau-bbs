@@ -10,13 +10,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 
-  @Autowired
-  private LoginInterceptor loginInterceptor;
+  @Autowired private LoginInterceptor loginInterceptor;
+
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
     registry
         .addInterceptor(loginInterceptor)
         .addPathPatterns(
+            "/pages/index",
             "/posts/pages/add",
             "/user/pages/set",
             "/user/pages/seticon",

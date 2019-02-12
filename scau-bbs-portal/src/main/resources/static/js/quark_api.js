@@ -1,7 +1,7 @@
 /*链接*/
 var quark_login_api = "/user/login";
 var quark_getUser_api = "/user/message/";
-var quark_logout_api = "/user/logout";
+var quark_logout_api = "/user/pages/logout";
 var quark_register_api = "/user";
 var quark_upload_api = "/upload/image";
 var quark_upload_icon_api = "/upload/usericon/";
@@ -16,7 +16,7 @@ var quark_user_detail_api = "/user/detail/";
 var quark_user_update_api = "/user/";
 var quark_user_update_psd_api = "/user/password/";
 var quark_label_posts_api = "/posts/label/";
-var quark_webSocket_api = "/quarkServer";
+var quark_webSocket_api = "http://129.204.69.80:8081/quarkServer";
 var quark_notification_api = "/notification/";
 var quark_chat_webSocket_api = "ws://129.204.69.80:8083/websocket";
 
@@ -74,9 +74,10 @@ function logout() {
     $.post(quark_logout_api, {
         token: getCookie()
     }, function (obj) {
+         obj=$.parseJSON(obj);
         if (obj.status == 200) {
             deleteCookie();
-            location.href = "/index";
+            location.href = "/pages/index";
         } else {
             layer.msg(obj.error, {icon: 5});
         }

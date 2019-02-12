@@ -83,6 +83,14 @@
             <artifactId>feign-form-spring</artifactId>
             <version>3.0.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.3</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <plugins>

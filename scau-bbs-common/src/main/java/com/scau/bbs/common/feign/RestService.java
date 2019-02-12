@@ -1,6 +1,5 @@
 package com.scau.bbs.common.feign;
 
-
 import com.scau.bbs.common.config.FeignMultipartSupportConfig;
 import com.scau.bbs.common.entity.Reply;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -8,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@FeignClient(name = "scau-bbs-rest",configuration = FeignMultipartSupportConfig.class)
+@FeignClient(name = "scau-bbs-rest", configuration = FeignMultipartSupportConfig.class)
 public interface RestService {
 
   @RequestMapping("/label")
@@ -54,15 +53,19 @@ public interface RestService {
 
   @PostMapping("/reply")
   String CreateReply(
-      @RequestParam(value="content",required = true) String content,
+      @RequestParam(value = "content", required = true) String content,
       @RequestParam(value = "postsId", required = true) Integer postsId,
       @RequestParam(value = "token", required = true) String token);
 
   @PostMapping("/upload/image")
   String upload(@RequestParam(value = "file") MultipartFile file);
 
-  @PostMapping(value = "/upload/usericon/{token}",produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-  String iconUpload(@RequestPart(value = "file") MultipartFile file,@PathVariable(value = "token") String token);
+  @PostMapping(
+      value = "/upload/usericon/{token}",
+      produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},
+      consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+  String iconUpload(
+      @RequestPart(value = "file") MultipartFile file, @PathVariable(value = "token") String token);
 
   @PostMapping("/user")
   String checkUserName(
@@ -95,7 +98,7 @@ public interface RestService {
       @RequestParam(value = "oldpsd", required = true) String oldpsd);
 
   @PostMapping("/user/logout")
-  String logout(String token);
+  String logout(@RequestParam(value = "token", required = true) String token);
 
   @GetMapping("/user/detail/{userid}")
   String getUserById(@PathVariable(value = "userid") Integer userid);

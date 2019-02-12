@@ -40,7 +40,7 @@
                     "</a>" +
                     "<div class='nav'>" +
                     "<a href='/user/pages/set'><i class='iconfont icon-shezhi'></i>设置</a>" +
-                    "<a href='' onclick='logout()'><i class='iconfont icon-tuichu' style='top: 0; font-size: 22px;'></i>退了</a>" +
+                    "<a href='javascript:void(0)' onclick='logout();'><i class='iconfont icon-tuichu' style='top: 0; font-size: 22px;'></i>退了</a>" +
                     "</div>";
                 connectWebSocket(data.data.user.id);
             } else {
@@ -55,11 +55,12 @@
             $.post(quark_logout_api, {
                 token: getCookie()
             }, function (data) {
-                //console.log(data);
-                //data=$.parseJSON(data);
+                console.log(data);
+                data=$.parseJSON(data);
                 if (data.status == 200) {
                     deleteCookie();
-                    location.href = "/pages/index";
+                    window.location.href = "/pages/index";
+                    //$.reload();
                 } else {
                     layer.msg(data.error, {icon: 5});
                 }

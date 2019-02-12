@@ -33,14 +33,12 @@ public class LoginInterceptor implements HandlerInterceptor {
       throws Exception {
 
     String token = CookieUtils.getCookieValue(httpServletRequest, cookieName);
-    //System.out.println("拦截token===>"+token);
     if (StringUtils.isEmpty(token)) {
       // 跳转到登录页面
       httpServletResponse.sendRedirect("/user/login");
       return false;
     }
     User user = userService.getUserByApi(token);
-    //System.out.println("拦截user===>"+user.toString());
     // 取不到用户信息
     if (ObjectUtils.isEmpty(user)) {
       // 跳转到登录页面

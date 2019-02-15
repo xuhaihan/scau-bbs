@@ -32,7 +32,7 @@
             </a>
         </li>
         <li class="layui-nav-item layui-this">
-            <a th:href="@{/user/pages/setpsw}">
+            <a th:href="@{/user/pages/message}">
                 <i class="layui-icon">&#xe611;</i>
                 我的消息
             </a>
@@ -47,9 +47,9 @@
                         {{# layui.each(d.data, function(index, item){ }}
                         <li>
                             <blockquote class="layui-elem-quote">
-                                <a href="../user/home?id={{item.fromuser.id}}" target="_blank"><cite>{{item.fromuser.username}}</cite></a>回复了您的帖子<a
+                                <a href="/user/home?id={{item.fromuser.id}}" target="_blank"><cite>{{item.fromuser.username}}</cite></a>回复了您的帖子<a
                                     target="_blank"
-                                    href="../posts/detail?id={{item.posts.id}}"><cite>{{item.posts.title}}</cite></a>
+                                    href="/posts/pages/detail?id={{item.posts.id}}"><cite>{{item.posts.title}}</cite></a>
                             </blockquote>
                             <p><span>回复时间：{{item.initTime}}</span></p>
                         </li>
@@ -65,16 +65,19 @@
 <div th:include="common/footer::footer"></div>
 <script>
     //获取消息
-    var uid = $.getUrlParam('id');
-    if (uid == null) {
+    var uid = $.getUrlParam('uid');
+    console.log(uid);
+    if (uid ==""||uid==null) {
         //如果链接地址没有id的话，就根据token去服务器获取
         $.get(quark_getUser_api + getCookie(), function (data) {
+            data=$.parseJSON(data);
             uid = data.data.user.id;
         })
     }
-    layui.use(['laytpl'], function () {
+    layui.use(['laytpl'], function (){
         var laytpl = layui.laytpl;
         $.get(quark_notification_api + uid, function (data) {
+            data=$.parseJSON(data);
             var message = $("#message").html();
             laytpl(message).render(data, function (html) {
                 $("#messages").html(html);

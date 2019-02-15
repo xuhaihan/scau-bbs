@@ -33,7 +33,7 @@
             if (data.status == 200) {
                 var count = data.data.messagecount;
                 if (count != 0) {
-                    htm += "<a class='nav-message' href='../user/message' title=''>" + count + "</a>";
+                    htm += "<a class='nav-message' href='/user/pages/message?uid="+data.data.user.id+"' title=''>" + count + "</a>";
                 }
                 htm += "<a class='avatar' href='/user/home?id=" + data.data.user.id + "'>" +
                     "<img src='" + data.data.user.icon + "'>" +
@@ -82,7 +82,7 @@
                     if ($('.nav-message').length > 0) {
                         $('.nav-message').html(JSON.parse(message.body).notice);
                     } else {
-                        $(".nav-user").prepend("<a class='nav-message' href='../user/message'>" + JSON.parse(message.body).notice + "</a>");
+                        $(".nav-user").prepend("<a class='nav-message' href='/user/message'>" + JSON.parse(message.body).notice + "</a>");
                     }
                 });
             })

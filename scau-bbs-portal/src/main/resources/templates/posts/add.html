@@ -35,16 +35,17 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">标签选择框</label>
                         <div class="layui-input-block">
-                            <div class="layui-input-inline">
-                                <select name="modules" lay-verify="required" lay-search="" id="label_select"
-                                        name="labelId">
-                                    <option value="">直接选择或搜索选择</option>
-
+                            <div class="layui-input-inline" onclick="">
+                                <script id="labels" type="text/html">
+                                    {{# layui.each(d.data, function(index,item){ }}
+                                        <option value="{{item.id}}">{{item.name}}</option>
+                                    {{#  }); }}
+                                </script>
+                                <select name="modules"  lay-search="" id="label_select" name="labelId">
                                 </select>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="layui-form-item">
                     <button class="layui-btn" lay-filter="*" lay-submit>立即发布</button>
@@ -59,26 +60,27 @@
 <script th:src="@{/js/jquery.cookie.js}"></script>
 <script th:src="@{/js/quark_api.js}"></script>
 <script>
-    //添加option
-    $.get(quark_label_getall_api, function (data) {
-        var htm = "";
-        data=$.parseJSON(data);
-        if (data.status == 200) {
-            for (var i = 0; i < data.data.length; i++) {
-                htm += "<option value='" + data.data[i].id + "'>" + data.data[i].name + "</option>"
-            }
-        } else {
-            layer.msg(data.error, {icon: 5});
-        }
-
-        $("#label_select").append(htm);
-    });
-
-    layui.use(['form', 'layedit'], function () {
+    layui.use(['form', 'laytpl', 'layedit'], function () {
 
         var form = layui.form,
             layedit = layui.layedit,
-            layer = layui.layer;
+            layer = layui.layer,
+            laytpl = layui.laytpl;
+
+        //添加option
+        $.get(quark_label_getall_api, function (data) {
+            data = $.parseJSON(data);
+            if (data.status == 200) {
+                var tpl = $("#labels").html();
+                laytpl(tpl).render(data, function (html) {
+                    $("#label_select").append(html);
+                    var form = layui.form
+                    form.render();
+                });
+            } else {
+                layer.msg(data.error, {icon: 5});
+            }
+        });
 
         layedit.set({
             uploadImage: {
@@ -119,6 +121,7 @@
 
             return false;
         });
+
     });
 
     //封装查询参数

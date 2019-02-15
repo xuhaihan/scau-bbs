@@ -25,6 +25,8 @@ spring:
   http:
       multipart:
         enabled: true
+        maxFileSize: 30Mb
+        maxRequestSize: 30Mb
 server:
   port: 8081
 ---

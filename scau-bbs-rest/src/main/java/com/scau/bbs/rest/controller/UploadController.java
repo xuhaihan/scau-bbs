@@ -44,7 +44,7 @@ public class UploadController {
   @PostMapping("/usericon/{token}")
   public UploadResult iconUpload(
       @RequestPart("file") MultipartFile file, @PathVariable("token") String token) {
-    UploadResult result = null;
+    UploadResult result =new UploadResult(1, "文件不存在");
     if (!file.isEmpty()) {
       try {
         String icon = FileUtils.uploadFile(file);
@@ -58,6 +58,6 @@ public class UploadController {
         return new UploadResult(1, e1.getMessage());
       }
     }
-    return new UploadResult(1, "文件不存在");
+    return result;
   }
 }

@@ -19,6 +19,24 @@ spring:
   http:
     multipart:
       enabled: true
+      maxFileSize: 30Mb
+      maxRequestSize: 30Mb
+feign:
+  hystrix:
+    enabled: true
+    command:
+       default:
+         execution:
+           isolation:
+             thread:
+               timeoutInMilliseconds: 300000
+         circuitBreaker:
+           sleepWindowInMilliseconds: 300000
+           forceClosed: true
+ribbon:
+  ConnectTimeout: 30000
+  SocketTimeout: 300000
+  ReadTimeout: 300000
 server:
   port: 8082
 ---

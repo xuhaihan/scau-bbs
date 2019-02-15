@@ -108,7 +108,7 @@
                 icon: 5,
                 time: 1000
             }, function () {
-                location.href = "/index";
+                location.href = "/pages/index";
             });
         }
 
@@ -118,7 +118,7 @@
     function userInfoInvake(obj) {
         var htmlData = ' <li class="fn-clear selected"><em>当前在线人数: ' + obj.count + '</em></li>';
         $.each(obj.userinfo, function (index, content) {
-            htmlData += '<li class="fn-clear"><span><a href="user/home?id=' + content.id + '" target="view_window"><img src="' + content.icon + '" width="30" height="30"  alt=""/></a></span><em>' + content.username + '</em><small class="online" title="在线"></small></li>';
+            htmlData += '<li class="fn-clear"><span><a href="/user/home?id=' + content.id + '" target="view_window"><img src="' + content.icon + '" width="30" height="30"  alt=""/></a></span><em>' + content.username + '</em><small class="online" title="在线"></small></li>';
         });
 
         $("#userinfo").html(htmlData);
@@ -127,7 +127,7 @@
     //broadcast
     function broadcastInvake(obj) {
         var htmlData = '<div class="msg_item fn-clear">'
-            + '<div class="uface"><a href="user/home?id=' + obj.uid + '" target="view_window"><img src="' + obj.icon + '" width="40" height="40"  alt=""/></a></div>'
+            + '<div class="uface"><a href="/user/home?id=' + obj.uid + '" target="view_window"><img src="' + obj.icon + '" width="40" height="40"  alt=""/></a></div>'
             + '<div class="item_right">'
             + '<div class="msg own">' + obj.msg + '</div>'
             + '<div class="name_time">' + obj.name + ' · ' + obj.time + '</div>'
@@ -166,7 +166,7 @@
                 icon: 5,
                 time: 2000
             }, function () {
-                location.href = "/index";
+                location.href = "/pages/index";
             });
         }
     }
@@ -180,7 +180,7 @@
             icon: 5,
             time: 2000
         }, function () {
-            location.href = "/index";
+            location.href = "/pages/index";
         });
     }
 
@@ -198,7 +198,6 @@
             var msg = buildMessage(messagetype, null, text);
             sendMessage(msg);
         });
-
         userLogin();
     });
 </script>

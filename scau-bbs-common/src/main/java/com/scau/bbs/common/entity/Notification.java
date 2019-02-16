@@ -7,9 +7,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @Author LHR
- * Create By 2017/8/18
- *
+ * @Author xhh
+ * Created by xhh on 2019/1/11
  * 通知
  */
 @Entity

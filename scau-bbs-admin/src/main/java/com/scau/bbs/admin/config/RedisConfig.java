@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-/** Created by lhr on 17-8-1. */
+//Created by xhh on 2019/1/14.
 @Configuration
 @EnableCaching
 @PropertySource(value = {"admin.yml","classpath:/admin.yml"})

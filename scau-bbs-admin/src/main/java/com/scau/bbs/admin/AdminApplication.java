@@ -11,7 +11,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 
-/** Created by lhr on 17-7-31. */
+/** Created by xhh on 2019/1/14.*/
 @SpringBootApplication
 @EnableCaching // 缓存支持
 public class AdminApplication {

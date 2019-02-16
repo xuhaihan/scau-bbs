@@ -17,8 +17,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @Author LHR
- * Create By 2017/9/3
+ * @Author xhh
+ * Create By 2019/1/15
  */
 @Service
 public class PostsServiceImpl extends BaseServiceImpl<PostsDao,Posts> implements PostsService {

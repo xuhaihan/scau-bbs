@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Created by lhr on 17-7-31.
+ * Created by xhh on 2019/1/11
  */
 @Repository
 @CacheConfig(cacheNames = "adminusers")

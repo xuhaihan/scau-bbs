@@ -7,7 +7,7 @@ import com.scau.bbs.common.entity.Role;
 import org.springframework.data.domain.Page;
 
 /**
- * Created by lhr on 17-8-1.
+ * Created by xhh on 2019/1/14.
  */
 public interface RoleService extends BaseService<Role> {
 

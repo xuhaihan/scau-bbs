@@ -1,8 +1,8 @@
 package com.scau.bbs.common.utils;
 
 /**
- * @Author LHR
- * Create By 2017/8/19
+ * @Author xhh
+ * Created by xhh on 2019/1/12
  */
 public class Constants {
 

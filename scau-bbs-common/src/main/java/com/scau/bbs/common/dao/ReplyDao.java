@@ -10,14 +10,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @Author LHR
- * Create By 2017/8/20
+ * @Author xhh
+ * Created by xhh on 2019/1/11
  */
 @CacheConfig(cacheNames = "replies")
 @Repository
 public interface ReplyDao extends JpaRepository<Reply,Integer>,JpaSpecificationExecutor {
 
     @Cacheable
-    @Override
     List<Reply> findAll();
 }

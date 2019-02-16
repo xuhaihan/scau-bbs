@@ -15,8 +15,8 @@ import javax.persistence.criteria.*;
 import java.util.ArrayList;
 
 /**
- * @Author LHR
- * Create By 2017/9/3
+ * @Author xhh
+ * Create By 2019/1/15
  */
 @Service
 public class ReplyServiceImpl extends BaseServiceImpl<ReplyDao,Reply> implements ReplyService {

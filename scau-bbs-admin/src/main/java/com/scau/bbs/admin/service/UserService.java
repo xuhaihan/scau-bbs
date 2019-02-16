@@ -5,8 +5,8 @@ import com.scau.bbs.common.entity.User;
 import org.springframework.data.domain.Page;
 
 /**
- * @Author LHR
- * Create By 2017/8/25
+ * @Author xhh
+ * Created by xhh on 2019/1/14.
  */
 public interface UserService  extends BaseService<User> {
 

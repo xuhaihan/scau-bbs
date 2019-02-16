@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.sql.DataSource;
 
 /**
- * Created by lhr on 17-7-31.
+ *Created by xhh on 2019/1/14.
  * user.setUsername("lhr");
  * user.setPassword("root");
  */

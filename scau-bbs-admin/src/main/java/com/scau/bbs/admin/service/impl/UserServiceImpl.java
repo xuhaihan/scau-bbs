@@ -15,8 +15,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @Author LHR
- * Create By 2017/8/25
+ * @Author xhh
+ * Create By 2019/1/15
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<UserDao,User> implements UserService {

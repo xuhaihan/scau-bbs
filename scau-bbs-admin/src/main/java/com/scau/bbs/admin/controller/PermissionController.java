@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by lhr on 17-8-3.
+ * Created by xhh on 2019/1/14.
  */
 @RestController
 @RequestMapping("/permissions")

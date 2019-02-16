@@ -3,7 +3,7 @@ package com.scau.bbs.common.base;
 import java.util.List;
 
 /**
- * Created by lhr on 17-8-1.
+ * Created by xhh on 2019/1/10
  * Service通用接口
  */
 public interface BaseService<T> {

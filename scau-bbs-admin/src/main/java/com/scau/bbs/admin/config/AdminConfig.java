@@ -4,7 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by lhr on 17-7-31.
+ * Created by xhh on 2019/1/14.
  */
 @Configuration
 @ComponentScan(basePackages = "com.scau.bbs.common")

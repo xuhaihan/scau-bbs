@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/** @Author : ChinaLHR @Date : Create in 10:01 2017/10/22 @Email : 13435500980@163.com */
+/** @Author : xhh @Date : Create in 10:01 2019/1/15 @Email : xhhscau2015@163.com */
 @RunWith(SpringRunner.class)
 @TestPropertySource(locations = {"classpath:chat.properties"})
 @SpringBootTest

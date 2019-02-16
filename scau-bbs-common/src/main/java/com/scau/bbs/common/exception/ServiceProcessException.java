@@ -1,8 +1,8 @@
 package com.scau.bbs.common.exception;
 
 /**
- * @Author LHR
- * Create By 2017/8/26
+ * @Author xhh
+ * Created by xhh on 2019/1/12
  */
 public class ServiceProcessException extends RuntimeException {
 

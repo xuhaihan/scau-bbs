@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @Author LHR
- * Create By 2017/9/6
+ * @Author xhh
+ * Created by xhh on 2019/1/11
  */
 @Repository
 public interface NotificationDao extends JpaRepository<Notification, Integer> {

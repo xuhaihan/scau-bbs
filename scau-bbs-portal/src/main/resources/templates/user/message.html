@@ -67,19 +67,27 @@
     //获取消息
     var uid = $.getUrlParam('uid');
     layui.use(['laytpl'], function (){
-        if (uid ==""||uid==null) {
+        var laytpl = layui.laytpl;
+        if (uid==null) {
             //如果链接地址没有id的话，就根据token去服务器获取
-            $.get(quark_getUser_api + getCookie(),false, function (data) {
+            $.get(quark_getUser_api + getCookie(), function (data) {
                 data=$.parseJSON(data);
                 uid = data.data.user.id;
                 console.log(uid);
-                var laytpl = layui.laytpl;
                 $.get(quark_notification_api + uid, function (data) {
                     data=$.parseJSON(data);
                     var message = $("#message").html();
                     laytpl(message).render(data, function (html) {
                         $("#messages").html(html);
                     })
+                })
+            })
+        }else {
+            $.get(quark_notification_api + uid, function (data) {
+                data = $.parseJSON(data);
+                var message = $("#message").html();
+                laytpl(message).render(data, function (html) {
+                    $("#messages").html(html);
                 })
             })
         }

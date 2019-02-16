@@ -66,23 +66,23 @@
 <script>
     //获取消息
     var uid = $.getUrlParam('uid');
-    console.log(uid);
-    if (uid ==""||uid==null) {
-        //如果链接地址没有id的话，就根据token去服务器获取
-        $.get(quark_getUser_api + getCookie(), function (data) {
-            data=$.parseJSON(data);
-            uid = data.data.user.id;
-        })
-    }
     layui.use(['laytpl'], function (){
-        var laytpl = layui.laytpl;
-        $.get(quark_notification_api + uid, function (data) {
-            data=$.parseJSON(data);
-            var message = $("#message").html();
-            laytpl(message).render(data, function (html) {
-                $("#messages").html(html);
+        if (uid ==""||uid==null) {
+            //如果链接地址没有id的话，就根据token去服务器获取
+            $.get(quark_getUser_api + getCookie(),false, function (data) {
+                data=$.parseJSON(data);
+                uid = data.data.user.id;
+                console.log(uid);
+                var laytpl = layui.laytpl;
+                $.get(quark_notification_api + uid, function (data) {
+                    data=$.parseJSON(data);
+                    var message = $("#message").html();
+                    laytpl(message).render(data, function (html) {
+                        $("#messages").html(html);
+                    })
+                })
             })
-        })
+        }
     })
 
     //删除消息

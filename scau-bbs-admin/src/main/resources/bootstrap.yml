@@ -12,7 +12,8 @@ spring:
       config:
         format: YAML
   redis:
-      host: 47.107.89.95
+      #host: 47.107.89.95
+      host: 172.17.19.7
       password:
       port: 6379
       pool:

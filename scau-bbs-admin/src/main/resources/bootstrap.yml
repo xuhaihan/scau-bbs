@@ -11,6 +11,16 @@ spring:
         health-check-path: /health
       config:
         format: YAML
+  redis:
+      host: 47.107.89.95
+      password:
+      port: 6379
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
+      timeout: 0
   application:
     name: scau-bbs-admin
 ---
